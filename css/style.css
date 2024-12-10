@@ -1,0 +1,335 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "Echoes Sans";
+  src: url("Echoes-Sans/EchoesSans-Bold.woff2") format("woff2"), url("Echoes-Sans/EchoesSans-Bold.woff") format("woff"), url("Echoes-Sans/echoessans_bold.otf") format("opentype"); /* Для совместимости */
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Echoes Sans";
+  src: url("Echoes-Sans/EchoesSans-Medium.woff2") format("woff2"), url("Echoes-Sans/EchoesSans-Medium.woff") format("woff"), url("Echoes-Sans/echoessans_medium.otf") format("opentype"); /* Для совместимости */
+  font-weight: 500;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  transition: all 0.3s;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+path,
+ellipse,
+circle,
+rect,
+line {
+  transition: all 0.3s;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  background: transparent;
+  padding: 12px 24px;
+  text-transform: uppercase;
+}
+
+.btn-ico {
+  display: flex;
+  align-items: center;
+}
+.btn-ico i {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-blue {
+  color: #fff;
+  background-color: #002e88;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}
+.btn-blue p {
+  color: #fff;
+}
+
+body {
+  scroll-behavior: smooth;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+body.main {
+  color: #002e88;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 50px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header .right {
+  display: flex;
+  align-items: center;
+}
+header .right p.contacts {
+  font-size: 13px;
+  line-height: 185%;
+  color: #262628;
+}
+header .right p.contacts a {
+  display: block;
+  color: #262628;
+}
+header .right .login {
+  margin-left: 24px;
+}
+
+footer {
+  padding: 30px 50px;
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+footer p {
+  color: #aeaeb3;
+  font-size: 12px;
+}
+
+.section {
+  padding: 120px 50px 75px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.section .bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-position: 80% 0;
+}
+.section .content {
+  max-width: 737px;
+  width: 100%;
+  padding-left: 50px;
+}
+.section .content h1,
+.section .content h2 {
+  font-family: "Echoes Sans", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  margin-bottom: 50px;
+}
+.section .content .desc {
+  position: relative;
+  margin-bottom: 50px;
+}
+.section .content .desc p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  font-weight: 600;
+  line-height: 130%;
+}
+.section .content .desc p:last-child {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+.section .content .desc::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 84px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+}
+.section .content .bottom {
+  display: flex;
+  align-items: center;
+}
+.section .content .bottom p {
+  width: 255px;
+  font-size: 12px;
+  margin-right: 24px;
+  color: #717179;
+}
+.section .category {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.section .category .item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  height: 232px;
+  width: 100%;
+  max-width: 743px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.section .category .item img {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+  width: 473px;
+  height: 473px;
+  transition: all 0.5s;
+}
+.section .category .item svg {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.section .category .item .btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.section .category .item span {
+  position: absolute;
+  z-index: 5;
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.5;
+  left: 24px;
+  top: 24px;
+  color: #fff;
+}
+.section .category .item h6 {
+  position: absolute;
+  z-index: 6;
+  font-weight: 500;
+  font-size: 32px;
+  font-family: "Echoes Sans", sans-serif;
+  left: 24px;
+  bottom: 24px;
+  color: #fff;
+}
+.section .category .item::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.section .category .item::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  z-index: 1;
+  top: -660px;
+  left: -560px;
+  width: 820px;
+  height: 820px;
+  filter: blur(300px);
+  border-radius: 50%;
+}
+.section .category .item.human {
+  color: #00359b;
+  background-color: #00359b;
+}
+.section .category .item.human::after {
+  background: rgb(0, 194, 255);
+  background: linear-gradient(45deg, rgba(0, 194, 255, 0) 0%, rgb(71, 41, 255) 100%);
+}
+.section .category .item.human::before {
+  background: rgb(71, 41, 255);
+  background: radial-gradient(circle, rgb(71, 41, 255) 0%, rgba(0, 194, 255, 0) 100%);
+}
+.section .category .item.animal {
+  background-color: #00897b;
+}
+.section .category .item.animal::after {
+  background: rgb(0, 194, 255);
+  background: linear-gradient(45deg, rgba(0, 194, 255, 0) 0%, rgb(0, 117, 137) 100%);
+}
+.section .category .item.plants {
+  background-color: #004d44;
+}
+.section .category .item.plants::after {
+  background: rgb(0, 194, 255);
+  background: linear-gradient(45deg, rgba(0, 194, 255, 0) 0%, rgb(0, 97, 86) 100%);
+}
+.section .category .item:hover img {
+  width: 570px;
+  height: 570px;
+}

@@ -1,0 +1,30 @@
+$color-white: #fff;
+$color-black: #262628;
+$color-blue: #0054f8;
+$color-dark-blue: #002e88;
+$color-grey: #9999a0;
+$color-light-grey: #ebebec;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+$font-inter: "Inter", sans-serif;
+
+@font-face {
+  font-family: "Echoes Sans";
+  src: url("Echoes-Sans/EchoesSans-Bold.woff2") format("woff2"),
+    url("Echoes-Sans/EchoesSans-Bold.woff") format("woff"),
+    url("Echoes-Sans/echoessans_bold.otf") format("opentype"); /* Для совместимости */
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Echoes Sans";
+  src: url("Echoes-Sans/EchoesSans-Medium.woff2") format("woff2"),
+    url("Echoes-Sans/EchoesSans-Medium.woff") format("woff"),
+    url("Echoes-Sans/echoessans_medium.otf") format("opentype"); /* Для совместимости */
+  font-weight: 500;
+  font-style: normal;
+}
+
+$font-echoes: "Echoes Sans", sans-serif;
