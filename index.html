@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.min.css" />
     <!-- Подключаем итоговый CSS файл -->
   </head>
-  <body class="main">
+  <body class="main-section">
     <header>
       <a href="#" class="logo">
         <svg
@@ -125,10 +125,11 @@
       </div>
     </header>
     <div class="main-wrap">
-      <section class="section main-section">
+      <section class="section main-section active">
         <div class="bg"></div>
         <div class="content">
           <h1>Synthesizing the future of medicine</h1>
+
           <div class="desc">
             <p>
               Ultra short peptides have shown very high biological activity not
@@ -154,7 +155,7 @@
           </div>
         </div>
         <ul class="category">
-          <li class="item human">
+          <li class="item human" data-section="human-section">
             <span>01</span>
             <img src="img/category-1.png" alt="" />
             <button class="btn">
@@ -192,7 +193,7 @@
             </button>
             <h6>human</h6>
           </li>
-          <li class="item animal">
+          <li class="item animal" data-section="animal-section">
             <span>02</span>
             <img src="img/category-2.png" alt="" />
             <button class="btn">
@@ -230,7 +231,374 @@
             </button>
             <h6>animal</h6>
           </li>
-          <li class="item plants">
+          <li class="item plants" data-section="plants-section">
+            <span>03</span>
+            <img src="img/category-3.png" alt="" />
+            <svg
+              width="330"
+              height="232"
+              viewBox="0 0 330 232"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M216.834 315.523C201.173 317.043 109.981 321.96 50.3795 260.894C-7.96915 200.902 -0.273316 110.153 1.785 94.5955C1.785 93.7908 2.85955 93.3438 3.57549 94.0591C9.92941 102.285 37.5821 134.74 69.2622 151.012C92.0826 162.814 110.428 175.867 124.747 190.62C139.065 205.104 151.326 223.79 162.334 246.5C177.487 277.921 208.683 306.136 216.909 313.576L217.282 313.913C218.088 314.45 217.819 315.433 216.834 315.433V315.523Z"
+                fill="#006156"
+              />
+              <path
+                d="M159.023 -57.2192C159.739 -58.0239 160.812 -57.4875 160.812 -56.4146C160.544 -47.2056 160.812 -13.4987 171.82 12.519C179.963 31.3841 184.528 48.8187 185.602 65.4486C186.855 82.0784 184.796 99.96 179.695 119.898C172.536 147.167 176.92 180.695 178.442 189.636C178.71 190.709 177.637 191.156 176.921 190.709C165.377 182.752 107.118 139.3 102.285 71.3495C97.4527 4.65115 148.821 -47.4738 159.112 -57.1299L159.023 -57.2192Z"
+                fill="#006156"
+              />
+              <path
+                d="M228.021 -23.5124C253.347 -77.1572 315.723 -96.0223 328.789 -99.4198C329.594 -99.6881 330.31 -98.8834 329.862 -98.1681C325.477 -90.7473 311.158 -64.4612 308.295 -39.6952C305.968 -21.5454 301.942 -5.98845 295.767 7.60157C289.413 20.9234 279.926 34.1558 266.86 47.4776C249.498 65.6274 238.223 93.4333 235.36 101.391C235.091 102.106 233.838 102.106 233.569 101.391C227.663 89.5887 201.799 31.1158 227.931 -23.6019L228.021 -23.5124Z"
+                fill="#006156"
+              />
+            </svg>
+
+            <button class="btn">
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_231_2445)">
+                  <path
+                    d="M20 27.9999H36.0001M36.0001 27.9999L30 21.9999M36.0001 27.9999L30 33.9999"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="55"
+                  rx="27.5"
+                  stroke="white"
+                  stroke-opacity="0.2"
+                />
+                <defs>
+                  <clipPath id="clip0_231_2445">
+                    <rect width="56" height="56" rx="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <h6>plants</h6>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section plants-section">
+        <div class="bg"></div>
+        <div class="content">
+          <h1>Synthesizing the future of medicine</h1>
+          <div class="desc">
+            <p>
+              Ultra short peptides have shown very high biological activity not
+              only in humans and animals, but also in plants. A fact that once
+              again proves that common mechanisms of protein synthesis are at
+              work in every living organism.
+            </p>
+
+            <p>
+              Following the experimental and open field studies, we decided to
+              develop a market-ready technology aimed at increasing the yield of
+              a selection of crops. In some cases the effect comes from
+              increased plant cell proliferation and in others from increased
+              plant resistance to weather conditions.
+            </p>
+          </div>
+          <div class="bottom">
+            <p>
+              To get access to more information regarding this area of our
+              research, please
+            </p>
+            <button class="btn btn-blue">Sign In</button>
+          </div>
+        </div>
+        <ul class="category">
+          <li class="item human" data-section="human-section">
+            <span>01</span>
+            <img src="img/category-1.png" alt="" />
+            <button class="btn">
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_231_2445)">
+                  <path
+                    d="M20 27.9999H36.0001M36.0001 27.9999L30 21.9999M36.0001 27.9999L30 33.9999"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="55"
+                  rx="27.5"
+                  stroke="white"
+                  stroke-opacity="0.2"
+                />
+                <defs>
+                  <clipPath id="clip0_231_2445">
+                    <rect width="56" height="56" rx="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <h6>human</h6>
+          </li>
+          <li class="item animal" data-section="animal-section">
+            <span>02</span>
+            <img src="img/category-2.png" alt="" />
+            <button class="btn">
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_231_2445)">
+                  <path
+                    d="M20 27.9999H36.0001M36.0001 27.9999L30 21.9999M36.0001 27.9999L30 33.9999"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="55"
+                  rx="27.5"
+                  stroke="white"
+                  stroke-opacity="0.2"
+                />
+                <defs>
+                  <clipPath id="clip0_231_2445">
+                    <rect width="56" height="56" rx="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <h6>animal</h6>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section human-section">
+        <div class="bg"></div>
+        <div class="content">
+          <h1>Synthesizing the future of medicine</h1>
+          <div class="desc">
+            <p>
+              Ultra short peptides have shown very high biological activity not
+              only in humans and animals, but also in plants. A fact that once
+              again proves that common mechanisms of protein synthesis are at
+              work in every living organism.
+            </p>
+
+            <p>
+              Following the experimental and open field studies, we decided to
+              develop a market-ready technology aimed at increasing the yield of
+              a selection of crops. In some cases the effect comes from
+              increased plant cell proliferation and in others from increased
+              plant resistance to weather conditions.
+            </p>
+          </div>
+          <div class="bottom">
+            <p>
+              To get access to more information regarding this area of our
+              research, please
+            </p>
+            <button class="btn btn-blue">Sign In</button>
+          </div>
+        </div>
+        <ul class="category">
+          <li class="item animal" data-section="animal-section">
+            <span>02</span>
+            <img src="img/category-2.png" alt="" />
+            <button class="btn">
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_231_2445)">
+                  <path
+                    d="M20 27.9999H36.0001M36.0001 27.9999L30 21.9999M36.0001 27.9999L30 33.9999"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="55"
+                  rx="27.5"
+                  stroke="white"
+                  stroke-opacity="0.2"
+                />
+                <defs>
+                  <clipPath id="clip0_231_2445">
+                    <rect width="56" height="56" rx="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <h6>animal</h6>
+          </li>
+          <li class="item plants" data-section="plants-section">
+            <span>03</span>
+            <img src="img/category-3.png" alt="" />
+            <svg
+              width="330"
+              height="232"
+              viewBox="0 0 330 232"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M216.834 315.523C201.173 317.043 109.981 321.96 50.3795 260.894C-7.96915 200.902 -0.273316 110.153 1.785 94.5955C1.785 93.7908 2.85955 93.3438 3.57549 94.0591C9.92941 102.285 37.5821 134.74 69.2622 151.012C92.0826 162.814 110.428 175.867 124.747 190.62C139.065 205.104 151.326 223.79 162.334 246.5C177.487 277.921 208.683 306.136 216.909 313.576L217.282 313.913C218.088 314.45 217.819 315.433 216.834 315.433V315.523Z"
+                fill="#006156"
+              />
+              <path
+                d="M159.023 -57.2192C159.739 -58.0239 160.812 -57.4875 160.812 -56.4146C160.544 -47.2056 160.812 -13.4987 171.82 12.519C179.963 31.3841 184.528 48.8187 185.602 65.4486C186.855 82.0784 184.796 99.96 179.695 119.898C172.536 147.167 176.92 180.695 178.442 189.636C178.71 190.709 177.637 191.156 176.921 190.709C165.377 182.752 107.118 139.3 102.285 71.3495C97.4527 4.65115 148.821 -47.4738 159.112 -57.1299L159.023 -57.2192Z"
+                fill="#006156"
+              />
+              <path
+                d="M228.021 -23.5124C253.347 -77.1572 315.723 -96.0223 328.789 -99.4198C329.594 -99.6881 330.31 -98.8834 329.862 -98.1681C325.477 -90.7473 311.158 -64.4612 308.295 -39.6952C305.968 -21.5454 301.942 -5.98845 295.767 7.60157C289.413 20.9234 279.926 34.1558 266.86 47.4776C249.498 65.6274 238.223 93.4333 235.36 101.391C235.091 102.106 233.838 102.106 233.569 101.391C227.663 89.5887 201.799 31.1158 227.931 -23.6019L228.021 -23.5124Z"
+                fill="#006156"
+              />
+            </svg>
+
+            <button class="btn">
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_231_2445)">
+                  <path
+                    d="M20 27.9999H36.0001M36.0001 27.9999L30 21.9999M36.0001 27.9999L30 33.9999"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="55"
+                  rx="27.5"
+                  stroke="white"
+                  stroke-opacity="0.2"
+                />
+                <defs>
+                  <clipPath id="clip0_231_2445">
+                    <rect width="56" height="56" rx="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <h6>plants</h6>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section animal-section">
+        <div class="bg"></div>
+        <div class="content">
+          <h1>Synthesizing the future of medicine</h1>
+          <div class="desc">
+            <p>
+              Ultra short peptides have shown very high biological activity not
+              only in humans and animals, but also in plants. A fact that once
+              again proves that common mechanisms of protein synthesis are at
+              work in every living organism.
+            </p>
+
+            <p>
+              Following the experimental and open field studies, we decided to
+              develop a market-ready technology aimed at increasing the yield of
+              a selection of crops. In some cases the effect comes from
+              increased plant cell proliferation and in others from increased
+              plant resistance to weather conditions.
+            </p>
+          </div>
+          <div class="bottom">
+            <p>
+              To get access to more information regarding this area of our
+              research, please
+            </p>
+            <button class="btn btn-blue">Sign In</button>
+          </div>
+        </div>
+        <ul class="category">
+          <li class="item human" data-section="human-section">
+            <span>01</span>
+            <img src="img/category-1.png" alt="" />
+            <button class="btn">
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_231_2445)">
+                  <path
+                    d="M20 27.9999H36.0001M36.0001 27.9999L30 21.9999M36.0001 27.9999L30 33.9999"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="55"
+                  rx="27.5"
+                  stroke="white"
+                  stroke-opacity="0.2"
+                />
+                <defs>
+                  <clipPath id="clip0_231_2445">
+                    <rect width="56" height="56" rx="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <h6>human</h6>
+          </li>
+
+          <li class="item plants" data-section="plants-section">
             <span>03</span>
             <img src="img/category-3.png" alt="" />
             <svg
@@ -296,5 +664,8 @@
     <footer>
       <p>© 2024 AMRITEX industries. All rights reserved.</p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

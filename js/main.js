@@ -1,48 +1,69 @@
-$(document).ready(function () {
-  //===============================================
-  // Функция для прокрутки к нужному блоку
-  function scrollToTarget(targetId) {
-    var target = $(targetId);
-    if (target.length) {
-      var targetOffset = target.offset().top - 120;
-      $("html, body").animate(
-        {
-          scrollTop: targetOffset,
-        },
-        500
-      );
+const sections = document.querySelectorAll(".section");
+const body = document.body;
+
+// Функция для переключения секций
+function switchSection(targetSection) {
+  console.log(targetSection);
+  const currentSection = document.querySelector(".section.active");
+  const nextSection = document.querySelector(`.section.${targetSection}`);
+
+  // Убираем текущую секцию, если она не совпадает с целевой
+  if (currentSection && currentSection !== nextSection) {
+    gsap.to(currentSection, {
+      duration: 0.5,
+      opacity: 0,
+      scale: 0.9,
+      onComplete: () => {
+        currentSection.classList.remove("active");
+        currentSection.style.display = "none";
+      },
+    });
+  }
+
+  // Показываем следующую секцию
+  if (nextSection) {
+    nextSection.style.display = "flex";
+    gsap.fromTo(
+      nextSection,
+      { opacity: 0, scale: 0.9 },
+      {
+        duration: 0.5,
+        opacity: 1,
+        scale: 1,
+        onComplete: () => nextSection.classList.add("active"),
+      }
+    );
+
+    // Меняем класс у body для управления стилями
+    body.className = targetSection;
+  }
+}
+
+// Добавляем обработчик событий на весь document
+document.addEventListener("click", (event) => {
+  // Проверяем клик по логотипу в header
+  if (event.target.closest("header .logo")) {
+    const currentActiveSection = document.querySelector(".section.active");
+    const mainSection = document.querySelector(".section.main-section");
+
+    // Если текущая активная секция - не main-section, переключаем на нее
+    if (currentActiveSection !== mainSection) {
+      switchSection("main-section");
     }
+    return; // Прерываем выполнение, чтобы не обрабатывать другие клики
   }
 
-  // Проверяем наличие хэша в URL при загрузке страницы
-  var hash = window.location.hash;
-  if (hash) {
-    scrollToTarget(hash);
-    // Добавляем класс active для соответствующей ссылки
-    $(".side-bar a").removeClass("active");
-    $(`.side-bar a[href="${hash}"]`).addClass("active");
-  }
-
-  // Обрабатываем клик по ссылкам боковой панели
-  $(".side-bar a").on("click", function (event) {
-    event.preventDefault(); // Отменяем стандартное поведение ссылки
-    var targetId = $(this).attr("href"); // Получаем ID целевого блока
-    scrollToTarget(targetId);
-
-    // Добавляем класс active для текущей ссылки
-    $(".side-bar a").removeClass("active");
-    $(this).addClass("active");
-  });
-
-  // Для переходов между страницами
-  $(window).on("hashchange", function () {
-    var newHash = window.location.hash;
-    if (newHash) {
-      scrollToTarget(newHash);
-
-      // Добавляем класс active для соответствующей ссылки
-      $(".side-bar a").removeClass("active");
-      $(`.side-bar a[href="${newHash}"]`).addClass("active");
+  // Проверяем клик по секции
+  sections.forEach((section) => {
+    if (section.contains(event.target)) {
+      // Проверяем клик по элементам внутри категории
+      const item = event.target.closest(".category .item");
+      if (item) {
+        const targetSection = item.getAttribute("data-section");
+        if (targetSection) {
+          switchSection(targetSection);
+        }
+      }
     }
   });
 });
