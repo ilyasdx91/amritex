@@ -10,9 +10,9 @@ function switchSection(targetSection) {
   // Убираем текущую секцию, если она не совпадает с целевой
   if (currentSection && currentSection !== nextSection) {
     gsap.to(currentSection, {
-      duration: 0.5,
+      duration: 0,
       opacity: 0,
-      scale: 0.9,
+      // scale: 0.9,
       onComplete: () => {
         currentSection.classList.remove("active");
         currentSection.style.display = "none";
@@ -25,11 +25,14 @@ function switchSection(targetSection) {
     nextSection.style.display = "flex";
     gsap.fromTo(
       nextSection,
-      { opacity: 0, scale: 0.9 },
+      {
+        opacity: 0,
+        // scale: 0.9
+      },
       {
         duration: 0.5,
         opacity: 1,
-        scale: 1,
+        //scale: 1,
         onComplete: () => nextSection.classList.add("active"),
       }
     );

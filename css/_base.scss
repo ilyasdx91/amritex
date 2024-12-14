@@ -62,6 +62,7 @@ img {
   background: transparent;
   padding: 12px 24px;
   text-transform: uppercase;
+  transition: all 0.3s;
 }
 .btn-ico {
   display: flex;
@@ -82,5 +83,27 @@ img {
   font-family: $font-inter;
   p {
     color: $color-white;
+  }
+  &:hover {
+    background-color: #0054f8;
+  }
+}
+
+.plants-section {
+  .btn-blue {
+    color: $color-white;
+    background-color: #dafdb9;
+    color: #035248;
+    p {
+      color: #035248;
+    }
+    i {
+      path {
+        stroke: #035248;
+      }
+    }
+    &:hover {
+      background-color: #fff;
+    }
   }
 }
