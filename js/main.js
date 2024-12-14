@@ -30,7 +30,7 @@ function switchSection(targetSection) {
         // scale: 0.9
       },
       {
-        duration: 0.5,
+        duration: 1,
         opacity: 1,
         //scale: 1,
         onComplete: () => nextSection.classList.add("active"),
