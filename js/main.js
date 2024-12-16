@@ -3,16 +3,21 @@ const body = document.body;
 
 // Функция для переключения секций
 function switchSection(targetSection) {
-  console.log(targetSection);
   const currentSection = document.querySelector(".section.active");
   const nextSection = document.querySelector(`.section.${targetSection}`);
+
+  //currentSection.querySelectorAll(".bg").classList.remove("active");
+
+  const elements = document.querySelectorAll(".bg");
+  elements.forEach((element) => {
+    element.classList.remove("active");
+  });
 
   // Убираем текущую секцию, если она не совпадает с целевой
   if (currentSection && currentSection !== nextSection) {
     gsap.to(currentSection, {
       duration: 0,
       opacity: 0,
-      // scale: 0.9,
       onComplete: () => {
         currentSection.classList.remove("active");
         currentSection.style.display = "none";
@@ -27,18 +32,21 @@ function switchSection(targetSection) {
       nextSection,
       {
         opacity: 0,
-        // scale: 0.9
       },
       {
         duration: 1,
         opacity: 1,
         //scale: 1,
-        onComplete: () => nextSection.classList.add("active"),
+        onComplete: () => {
+          nextSection.classList.add("active");
+        },
       }
     );
 
     // Меняем класс у body для управления стилями
     body.className = targetSection;
+
+    nextSection.querySelector(".bg").classList.add("active");
   }
 }
 
@@ -61,6 +69,7 @@ document.addEventListener("click", (event) => {
     if (section.contains(event.target)) {
       // Проверяем клик по элементам внутри категории
       const item = event.target.closest(".category .item");
+      console.log(item);
       if (item) {
         const targetSection = item.getAttribute("data-section");
         if (targetSection) {
@@ -68,5 +77,11 @@ document.addEventListener("click", (event) => {
         }
       }
     }
+  });
+});
+
+$(document).ready(function () {
+  $(" .btn-blue").click(function () {
+    $(".form").addClass("active");
   });
 });
