@@ -46,7 +46,9 @@ function switchSection(targetSection) {
     // Меняем класс у body для управления стилями
     body.className = targetSection;
 
-    nextSection.querySelector(".bg").classList.add("active");
+    setTimeout(() => {
+      nextSection.querySelector(".bg").classList.add("active");
+    }, 50); // Задержка в 50 миллисекунд
   }
 }
 
@@ -83,5 +85,42 @@ document.addEventListener("click", (event) => {
 $(document).ready(function () {
   $(" .btn-blue").click(function () {
     $(".form").addClass("active");
+    $(".overlay").addClass("active");
   });
+  $(" .overlay").click(function () {
+    $(".form").removeClass("active");
+    $(".overlay").removeClass("active");
+  });
+});
+
+// Анимация маркера по первой дуге (видимый сектор)
+gsap.to("#marker1", {
+  motionPath: {
+    path: "#arc1", // Путь, по которому будет двигаться маркер
+    start: 0, // Начало анимации по пути
+    end: 1, // Конец анимации по пути
+    align: "#arc1",
+    alignOrigin: [1, 0.5], // Центрирование маркера
+    autoRotate: false, // Автоматическое вращение маркера вдоль траектории
+  },
+  repeat: -1, // Бесконечное повторение
+  yoyo: true, // Движение туда и обратно
+  duration: 5, // Время для полного цикла
+  ease: "power1.inOut", // Плавное изменение скорости
+});
+
+// Анимация маркера по второй дуге (видимый сектор)
+gsap.to("#marker2", {
+  motionPath: {
+    path: "#arc2", // Путь, по которому будет двигаться маркер
+    start: 1, // Начало анимации по пути
+    end: 0, // Конец анимации по пути
+    alignOrigin: [1, 0.5],
+    align: "#arc2",
+    autoRotate: true, // Автоматическое вращение маркера вдоль траектории
+  },
+  repeat: -1, // Бесконечное повторение
+  yoyo: true, // Движение туда и обратно
+  duration: 5, // Время для полного цикла (можно настроить)
+  ease: "power1.inOut", // Плавное изменение скорости
 });
