@@ -107,3 +107,22 @@ img {
     }
   }
 }
+
+.animal-section {
+  .btn-blue {
+    color: $color-white;
+    background-color: #00655b;
+
+    p {
+      color: #fff;
+    }
+    i {
+      path {
+        stroke: #fff;
+      }
+    }
+    &:hover {
+      background-color: #3fa99e !important;
+    }
+  }
+}
