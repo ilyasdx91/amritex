@@ -83,7 +83,42 @@ document.addEventListener("click", (event) => {
 });
 
 $(document).ready(function () {
-  switchSection("main-section");
+  //switchSection("main-section");
+
+  // Анимация header и main-section при загрузке
+  const header = document.querySelector("header");
+  const mainSection = document.querySelector(".section.main-section");
+  const body = document.body;
+
+  // Устанавливаем overflow: hidden для body
+  body.style.overflow = "hidden";
+
+  // Добавляем начальные классы
+  header.classList.add("header-animate");
+  mainSection.classList.add("main-section-animate");
+
+  // Анимация с помощью GSAP
+  gsap.to(header, {
+    duration: 1.2,
+    opacity: 1,
+    delay: 0.5,
+    y: 0, // Возвращаем на место
+    onComplete: () => {
+      header.classList.remove("header-animate"); // Убираем класс после анимации
+    },
+  });
+
+  gsap.to(mainSection, {
+    duration: 1,
+    opacity: 1,
+    y: 0, // Возвращаем на место
+    // delay: 0.5, // Задержка перед анимацией main-section
+    onComplete: () => {
+      mainSection.classList.remove("main-section-animate"); // Убираем класс после анимации
+      body.style.overflow = ""; // Убираем overflow: hidden после завершения анимации
+    },
+  });
+
   $(" .btn-blue").click(function () {
     $(".form").addClass("active");
     $(".overlay").addClass("active");

@@ -14,6 +14,7 @@ body {
   transition: all 0.5s;
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
   &.main-section {
     background: #fff;
     color: $color-dark-blue;
@@ -131,6 +132,16 @@ footer {
     color: #aeaeb3;
     font-size: 12px;
   }
+}
+
+.header-animate {
+  opacity: 0;
+  transform: translateY(-20px); /* Сдвиг вверх */
+}
+
+.main-section-animate {
+  opacity: 0;
+  transform: translateY(20px); /* Сдвиг вниз */
 }
 
 .main-wrap {
