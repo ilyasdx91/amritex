@@ -820,7 +820,7 @@ footer p {
   }
   .section .bg img {
     width: 100%;
-    transform: translate(0%, -20%);
+    transform: translate(20%, -20%);
   }
   .section .content {
     padding: 0 16px;
