@@ -83,6 +83,7 @@ document.addEventListener("click", (event) => {
 });
 
 $(document).ready(function () {
+  switchSection("main-section");
   $(" .btn-blue").click(function () {
     $(".form").addClass("active");
     $(".overlay").addClass("active");

@@ -147,6 +147,7 @@ body {
   color: #fff;
   transition: all 0.5s;
   position: relative;
+  min-height: 100vh;
 }
 body.main-section {
   background: #fff;
@@ -531,8 +532,10 @@ footer p {
   z-index: -1;
   background: rgba(0, 0, 0, 0);
   transition: all 0.3s;
+  display: none;
 }
 .overlay.active {
+  display: block;
   z-index: 20;
   background: rgba(0, 0, 0, 0.4);
 }
@@ -776,8 +779,26 @@ footer p {
   }
 }
 @media (max-width: 767px) {
+  header {
+    position: relative;
+    top: auto;
+  }
+  body {
+    padding-bottom: 50px;
+  }
+  .section {
+    padding: 80px 16px 0;
+    overflow-x: visible;
+    min-height: auto;
+  }
   .section .bg {
     background-image: none !important;
+    right: 0 !important;
+    overflow: hidden;
+    left: 0;
+    bottom: initial;
+    height: 100%;
+    top: -76px;
   }
   .section .bg img {
     display: block;
@@ -795,7 +816,7 @@ footer p {
 }
 @media (max-width: 560px) {
   .section {
-    padding: 160px 0px 50px;
+    padding: 80px 0px 0 0;
   }
   .section .bg img {
     width: 100%;
@@ -814,7 +835,7 @@ footer p {
     font-size: 12px;
   }
   .section .category {
-    margin-left: 16px;
+    padding-left: 16px;
   }
   .section .category .item:last-child {
     margin-right: 24px;
