@@ -134,6 +134,23 @@ footer {
   }
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Белый фон */
+  z-index: 9999; /* Поверх всех элементов */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  video {
+    width: 100%; /* Или задайте нужные размеры */
+    height: auto;
+  }
+}
+
 .header-animate {
   opacity: 0;
   transform: translateY(-20px); /* Сдвиг вверх */
