@@ -1,9 +1,19 @@
 // После загрузки страницы
 window.addEventListener("load", () => {
   const preloader = document.getElementById("video-preloader");
-  const video = preloader.querySelector("video");
+  const video = preloader.querySelector(".video");
+  const mobileVideo = preloader.querySelector(".mobile-video");
 
   video.addEventListener("ended", () => {
+    gsap.to(preloader, {
+      duration: 1,
+      opacity: 0,
+      onComplete: () => {
+        preloader.style.display = "none"; // Скрыть прелоадер
+      },
+    });
+  });
+  mobileVideo.addEventListener("ended", () => {
     gsap.to(preloader, {
       duration: 1,
       opacity: 0,
