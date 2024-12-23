@@ -148,6 +148,10 @@ footer {
   video {
     width: 100%; /* Или задайте нужные размеры */
     height: auto;
+    display: block;
+  }
+  .mobile-video {
+    display: none;
   }
 }
 
@@ -869,6 +873,15 @@ footer {
         position: relative;
         transform: translate(35%, -20%);
       }
+    }
+  }
+
+  .preloader {
+    video {
+      display: none;
+    }
+    .mobile-video {
+      display: block;
     }
   }
 }

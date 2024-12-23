@@ -262,6 +262,10 @@ footer p {
 .preloader video {
   width: 100%; /* Или задайте нужные размеры */
   height: auto;
+  display: block;
+}
+.preloader .mobile-video {
+  display: none;
 }
 
 .header-animate {
@@ -833,6 +837,12 @@ footer p {
     width: 800px;
     position: relative;
     transform: translate(35%, -20%);
+  }
+  .preloader video {
+    display: none;
+  }
+  .preloader .mobile-video {
+    display: block;
   }
 }
 @media (max-width: 670px) {
