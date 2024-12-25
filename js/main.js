@@ -27,8 +27,14 @@ window.addEventListener("load", () => {
 const sections = document.querySelectorAll(".section");
 const body = document.body;
 
+let isAnimating = false; // Флаг для отслеживания состояния анимации
+
 // Функция для переключения секций
 function switchSection(targetSection) {
+  if (isAnimating) return; // Если анимация выполняется, выходим из функции
+
+  isAnimating = true; // Устанавливаем флаг анимации
+
   const currentSection = document.querySelector(".section.active");
   const nextSection = document.querySelector(`.section.${targetSection}`);
 
@@ -47,6 +53,7 @@ function switchSection(targetSection) {
       onComplete: () => {
         currentSection.classList.remove("active");
         currentSection.style.display = "none";
+        //  isAnimating = false; // Сбрасываем флаг после завершения анимации
       },
     });
   }
@@ -65,6 +72,7 @@ function switchSection(targetSection) {
         //scale: 1,
         onComplete: () => {
           nextSection.classList.add("active");
+          isAnimating = false; // Сбрасываем флаг после завершения анимации
         },
       }
     );
