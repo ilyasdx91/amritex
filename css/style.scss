@@ -207,6 +207,18 @@ footer {
       background-image: url("../img/bg.png");
       background-position: 80% 0;
     }
+    .content {
+      .desc {
+        p {
+          color: #002e88 !important;
+          &:last-child {
+            color: #717179 !important;
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
   }
   &.plants-section {
     // background: #035248;
@@ -307,7 +319,7 @@ footer {
   }
 
   .content {
-    max-width: 737px;
+    max-width: 745px;
     width: 100%;
     padding-left: 50px;
     position: relative;
@@ -329,25 +341,26 @@ footer {
         font-weight: 600;
         line-height: 130%;
         position: relative;
+        color: #fff;
         &:last-child {
-          margin-bottom: 0;
-          font-size: 16px;
-          font-weight: 400;
+          // margin-bottom: 0;
+          // font-size: 16px;
+          // font-weight: 400;
 
-          -webkit-mask-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 1),
-            rgba(0, 0, 0, 0)
-          );
-          mask-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 1),
-            rgba(0, 0, 0, 0)
-          );
-          -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-          -webkit-mask-size: 100% 100%;
-          mask-size: 100% 100%;
+          // -webkit-mask-image: linear-gradient(
+          //   to bottom,
+          //   rgba(0, 0, 0, 1),
+          //   rgba(0, 0, 0, 0)
+          // );
+          // mask-image: linear-gradient(
+          //   to bottom,
+          //   rgba(0, 0, 0, 1),
+          //   rgba(0, 0, 0, 0)
+          // );
+          // -webkit-mask-repeat: no-repeat;
+          // mask-repeat: no-repeat;
+          // -webkit-mask-size: 100% 100%;
+          // mask-size: 100% 100%;
           // &::after {
           //   content: "";
           //   position: absolute;
