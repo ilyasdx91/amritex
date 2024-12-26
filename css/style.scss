@@ -140,13 +140,13 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff; /* Белый фон */
-  z-index: 9999; /* Поверх всех элементов */
+  background-color: #fff;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   video {
-    width: 100%; /* Или задайте нужные размеры */
+    width: 100%;
     height: auto;
     display: block;
   }
@@ -157,12 +157,12 @@ footer {
 
 .header-animate {
   opacity: 0;
-  transform: translateY(-20px); /* Сдвиг вверх */
+  transform: translateY(-20px);
 }
 
 .main-section-animate {
   opacity: 0;
-  transform: translateY(20px); /* Сдвиг вниз */
+  transform: translateY(20px);
 }
 
 .main-wrap {
@@ -211,11 +211,6 @@ footer {
       .desc {
         p {
           color: #002e88 !important;
-          &:last-child {
-            color: #717179 !important;
-            font-size: 14px;
-            font-weight: 400;
-          }
         }
       }
     }
@@ -321,7 +316,6 @@ footer {
   .content {
     max-width: 745px;
     width: 100%;
-    padding-left: 50px;
     position: relative;
     z-index: 3;
 
@@ -337,8 +331,8 @@ footer {
       margin-bottom: 50px;
       p {
         font-size: 20px;
-        margin-bottom: 50px;
-        font-weight: 600;
+        margin-bottom: 24px;
+        font-weight: 500;
         line-height: 130%;
         position: relative;
         color: #fff;
@@ -675,7 +669,6 @@ footer {
   }
 }
 
-/* Анимация bounce */
 @keyframes bounce-left {
   0% {
     transform: translateX(0);
@@ -731,7 +724,6 @@ footer {
   }
 }
 
-/* Bounce вниз */
 @keyframes bounce-down {
   0% {
     transform: translateY(-53px);
@@ -748,6 +740,25 @@ footer {
 }
 
 //==================================
+@media (max-height: 910px) {
+  .section {
+    padding-top: 110px;
+    .content {
+      h1,
+      h2 {
+        margin-bottom: 24px;
+      }
+      .desc {
+        margin-bottom: 0;
+      }
+    }
+
+    .category .item {
+      height: 196px;
+    }
+  }
+}
+
 @media (max-width: 1600px) {
   .circle {
     svg {
@@ -829,15 +840,20 @@ footer {
     }
     .category {
       padding: 0;
-      flex-direction: row;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      margin: 0 -16px;
+      flex-direction: initial;
+      //margin: 0 -16px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: space-between;
       .item {
-        margin-right: 8px;
-        width: 300px;
-        min-width: 300px;
+        margin-right: 0 0 8px 0;
+        width: 49%;
+        min-width: auto;
         height: 150px;
+        max-width: 100%;
+        &:last-child {
+          width: 100%;
+        }
         .btn {
           display: none;
         }
@@ -908,6 +924,9 @@ footer {
         transform: translate(35%, -20%);
       }
     }
+    .category .item {
+      width: 100%;
+    }
   }
 }
 
@@ -936,11 +955,14 @@ footer {
       }
     }
     .category {
-      padding-left: 16px;
-      .item:last-child {
-        margin-right: 24px;
-      }
+      padding: 0 16px;
     }
+    // .category {
+    //   padding-left: 16px;
+    //   .item:last-child {
+    //     margin-right: 24px;
+    //   }
+    // }
   }
   header .right {
     .contacts {

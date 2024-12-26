@@ -1,4 +1,3 @@
-// После загрузки страницы
 window.addEventListener("load", () => {
   const preloader = document.getElementById("video-preloader");
   const video = preloader.querySelector(".video");
@@ -9,7 +8,7 @@ window.addEventListener("load", () => {
       duration: 1,
       opacity: 0,
       onComplete: () => {
-        preloader.style.display = "none"; // Скрыть прелоадер
+        preloader.style.display = "none";
       },
     });
   });
@@ -18,7 +17,7 @@ window.addEventListener("load", () => {
       duration: 1,
       opacity: 0,
       onComplete: () => {
-        preloader.style.display = "none"; // Скрыть прелоадер
+        preloader.style.display = "none";
       },
     });
   });
@@ -27,13 +26,12 @@ window.addEventListener("load", () => {
 const sections = document.querySelectorAll(".section");
 const body = document.body;
 
-let isAnimating = false; // Флаг для отслеживания состояния анимации
+let isAnimating = false;
 
-// Функция для переключения секций
 function switchSection(targetSection) {
-  if (isAnimating) return; // Если анимация выполняется, выходим из функции
+  if (isAnimating) return;
 
-  isAnimating = true; // Устанавливаем флаг анимации
+  isAnimating = true;
 
   const currentSection = document.querySelector(".section.active");
   const nextSection = document.querySelector(`.section.${targetSection}`);
@@ -45,7 +43,6 @@ function switchSection(targetSection) {
     element.classList.remove("active");
   });
 
-  // Убираем текущую секцию, если она не совпадает с целевой
   if (currentSection && currentSection !== nextSection) {
     gsap.to(currentSection, {
       duration: 0,
@@ -53,12 +50,11 @@ function switchSection(targetSection) {
       onComplete: () => {
         currentSection.classList.remove("active");
         currentSection.style.display = "none";
-        //  isAnimating = false; // Сбрасываем флаг после завершения анимации
+        //  isAnimating = false;
       },
     });
   }
 
-  // Показываем следующую секцию
   if (nextSection) {
     nextSection.style.display = "flex";
     gsap.fromTo(
@@ -72,38 +68,32 @@ function switchSection(targetSection) {
         //scale: 1,
         onComplete: () => {
           nextSection.classList.add("active");
-          isAnimating = false; // Сбрасываем флаг после завершения анимации
+          isAnimating = false;
         },
       }
     );
 
-    // Меняем класс у body для управления стилями
     body.className = targetSection;
 
     setTimeout(() => {
       nextSection.querySelector(".bg").classList.add("active");
-    }, 50); // Задержка в 50 миллисекунд
+    }, 50);
   }
 }
 
-// Добавляем обработчик событий на весь document
 document.addEventListener("click", (event) => {
-  // Проверяем клик по логотипу в header
   if (event.target.closest("header .logo")) {
     const currentActiveSection = document.querySelector(".section.active");
     const mainSection = document.querySelector(".section.main-section");
 
-    // Если текущая активная секция - не main-section, переключаем на нее
     if (currentActiveSection !== mainSection) {
       switchSection("main-section");
     }
-    return; // Прерываем выполнение, чтобы не обрабатывать другие клики
+    return;
   }
 
-  // Проверяем клик по секции
   sections.forEach((section) => {
     if (section.contains(event.target)) {
-      // Проверяем клик по элементам внутри категории
       const item = event.target.closest(".category .item");
       console.log(item);
       if (item) {
@@ -119,37 +109,32 @@ document.addEventListener("click", (event) => {
 $(document).ready(function () {
   //switchSection("main-section");
 
-  // Анимация header и main-section при загрузке
   const header = document.querySelector("header");
   const mainSection = document.querySelector(".section.main-section");
   const body = document.body;
 
-  // Устанавливаем overflow: hidden для body
   body.style.overflow = "hidden";
 
-  // Добавляем начальные классы
   header.classList.add("header-animate");
   mainSection.classList.add("main-section-animate");
 
-  // Анимация с помощью GSAP
   gsap.to(header, {
     duration: 1.2,
     opacity: 1,
     delay: 0.5,
-    y: 0, // Возвращаем на место
+    y: 0,
     onComplete: () => {
-      header.classList.remove("header-animate"); // Убираем класс после анимации
+      header.classList.remove("header-animate");
     },
   });
 
   gsap.to(mainSection, {
     duration: 1,
     opacity: 1,
-    y: 0, // Возвращаем на место
-    // delay: 0.5, // Задержка перед анимацией main-section
+    y: 0,
     onComplete: () => {
-      mainSection.classList.remove("main-section-animate"); // Убираем класс после анимации
-      body.style.overflow = ""; // Убираем overflow: hidden после завершения анимации
+      mainSection.classList.remove("main-section-animate");
+      body.style.overflow = "";
     },
   });
 
@@ -163,34 +148,32 @@ $(document).ready(function () {
   });
 });
 
-// Анимация маркера по первой дуге (видимый сектор)
 gsap.to("#marker1", {
   motionPath: {
-    path: "#arc1", // Путь, по которому будет двигаться маркер
-    start: 0, // Начало анимации по пути
-    end: 1, // Конец анимации по пути
+    path: "#arc1",
+    start: 0,
+    end: 1,
     align: "#arc1",
-    alignOrigin: [1, 0.5], // Центрирование маркера
-    autoRotate: false, // Автоматическое вращение маркера вдоль траектории
+    alignOrigin: [1, 0.5],
+    autoRotate: false,
   },
-  repeat: -1, // Бесконечное повторение
-  yoyo: true, // Движение туда и обратно
-  duration: 5, // Время для полного цикла
-  ease: "power1.inOut", // Плавное изменение скорости
+  repeat: -1,
+  yoyo: true,
+  duration: 5,
+  ease: "power1.inOut",
 });
 
-// Анимация маркера по второй дуге (видимый сектор)
 gsap.to("#marker2", {
   motionPath: {
-    path: "#arc2", // Путь, по которому будет двигаться маркер
-    start: 1, // Начало анимации по пути
-    end: 0, // Конец анимации по пути
+    path: "#arc2",
+    start: 1,
+    end: 0,
     alignOrigin: [1, 0.5],
     align: "#arc2",
-    autoRotate: true, // Автоматическое вращение маркера вдоль траектории
+    autoRotate: true,
   },
-  repeat: -1, // Бесконечное повторение
-  yoyo: true, // Движение туда и обратно
-  duration: 5, // Время для полного цикла (можно настроить)
-  ease: "power1.inOut", // Плавное изменение скорости
+  repeat: -1,
+  yoyo: true,
+  duration: 5,
+  ease: "power1.inOut",
 });
