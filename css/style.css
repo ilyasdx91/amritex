@@ -317,7 +317,7 @@ footer p {
   background-position: 80% 0;
 }
 .section.main-section .content .desc p {
-  color: #002e88 !important;
+  color: #262628 !important;
 }
 .section.plants-section .bg {
   background-image: url("../img/bg2.png");
@@ -327,6 +327,9 @@ footer p {
   background-color: #fff;
 }
 .section.plants-section .content .bottom p {
+  color: #fff;
+}
+.section.plants-section .content .bottom p a {
   color: #fff;
 }
 .section.human-section .bg {
@@ -339,11 +342,17 @@ footer p {
 .section.human-section .content .bottom p {
   color: #fff;
 }
+.section.human-section .content .bottom p a {
+  color: #fff;
+}
 .section.animal-section .bg {
   background-image: url("../img/bg4.png");
   background-position: 100% 0;
 }
 .section.animal-section .content .bottom p {
+  color: #fff;
+}
+.section.animal-section .content .bottom p a {
   color: #fff;
 }
 .section .bg {
@@ -382,7 +391,7 @@ footer p {
 .section .content .desc p {
   font-size: 20px;
   margin-bottom: 24px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 130%;
   position: relative;
   color: #fff;
@@ -392,10 +401,12 @@ footer p {
   align-items: center;
 }
 .section .content .bottom p {
-  width: 255px;
   font-size: 12px;
-  margin-right: 24px;
   color: #717179;
+}
+.section .content .bottom p a {
+  color: #002e88;
+  text-decoration: underline;
 }
 .section .content .btn-blue {
   overflow: hidden;

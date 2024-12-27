@@ -142,6 +142,10 @@ $(document).ready(function () {
     $(".form").addClass("active");
     $(".overlay").addClass("active");
   });
+  $(" .bottom p a").click(function () {
+    $(".form").addClass("active");
+    $(".overlay").addClass("active");
+  });
   $(" .overlay").click(function () {
     $(".form").removeClass("active");
     $(".overlay").removeClass("active");
