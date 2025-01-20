@@ -1,3 +1,7 @@
+//const scale = window.devicePixelRatio; // Получает системное масштабирование
+//document.body.style.transform = `scale(${1 / scale})`;
+//document.body.style.transformOrigin = "0 0";
+
 window.addEventListener("load", () => {
   const preloader = document.getElementById("video-preloader");
   const video = preloader.querySelector(".video");
